@@ -1,0 +1,23 @@
+@use '../../partials/variables' as *;
+
+.main-page{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    &__center{
+        background-color: $off-white;
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__video-view{
+        height: 100%;
+        width: 100%;
+    }
+}
