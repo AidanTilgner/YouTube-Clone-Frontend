@@ -12,7 +12,6 @@ function MainPage() {
     return (
         <div className="main-page">
             <div className="main-page__center">
-                <Sidebar/>
                 <div className="main-page__video-view">
 
                 </div>

@@ -1,5 +1,5 @@
 //modules
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 //files
@@ -14,6 +14,14 @@ import VideoCallIcon from '@material-ui/icons/VideoCall';
 const Navbar: React.FC = () => {
 
     const [loggedIn, setloggedIn] = useState<boolean>(false)
+    const [profilePicture, setProfilePicture] = useState<string>('')
+
+    useEffect(() => {
+        if(sessionStorage.getItem('loggedIn')){
+            setloggedIn(true)
+            setProfilePicture(sessionStorage.getItem('imageUrl') as string)
+        }
+    }, [sessionStorage.getItem('loggedIn')])
 
     return (
         <div className="navbar">
@@ -35,7 +43,9 @@ const Navbar: React.FC = () => {
                     <button className="navbar__create-button"><VideoCallIcon className="navbar__icon"/></button>
                     {loggedIn ? (
                         <button className="navbar__profile-button">
-                            <div className="navbar__profile"></div>
+                            <img src={profilePicture} className="navbar__profile">
+
+                            </img>
                         </button>
                     ) : (
                         <Link to="/signin">

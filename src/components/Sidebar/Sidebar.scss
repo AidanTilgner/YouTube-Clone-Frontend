@@ -3,6 +3,52 @@
 .sidebar{
     width: 250px;
     height: 100%;
+    position: fixed;
+    top: 60px;
 
     background-color: $white;
+
+    &__items{
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+        border-bottom: 1px solid $light-grey;
+        padding-block-start: 8px;
+        padding-block-end: 8px;
+    }
+
+    &__item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 10px;
+        padding-left: 20px;
+        color: rgba($color: $dark-grey, $alpha: .7);
+        
+        &:hover{
+            cursor: pointer;
+            background-color: $light-grey;
+        }
+    }
+
+    &__item-name{
+        font-size: 14px;
+        font-weight: 400;
+        color: $darker-grey;
+    }
+
+    &__icon{
+        margin-right: 14px;
+    }
+
+    &__active{
+        color: $youtube-red;
+        background-color: #dadada;
+    }
+
+    &__link{
+        text-decoration: none;
+    }
 }
